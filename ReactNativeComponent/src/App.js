@@ -1,37 +1,32 @@
-
 import React from 'react';
-import {View, StyleSheet, Text, Button, TouchableOpacity} from 'react-native';
-import MyButton from './components/MyButton';
-import Counter from './components/Counter';
-import EventButton from './components/EventButton';
-import EventInput from './components/EventInput';
+import {View, Text, Pressable} from 'react-native';
 
-const App = () => {
-    return(
-        <View style = {{
-            flex:1,
-            backgroundColor : '#fff',
-            alignItems :'center',
-            justifyContent : 'center',
-            }}
-        >
-            {/* <Text style = {{
-                fontSize:30,
-                marginBottom : 10,
-                }}>
-                Props
-            </Text> */}
-            {/* <MyButton title = "Button" onPress={() => alert('props')}/>
-            <MyButton title = "Button" onPress = {()=> alert('children')}>Children Props</MyButton>
-            <MyButton onPress={()=> alert('default')}/> */}
-            {/* <Counter /> */}
-            <EventButton />
-            <EventInput />
-        </View>
-        
-
+const Button = (props) => {
+    return (
+        <Pressable style ={{padding : 10, backgroundColor: '#1abc9c'}}
+        onPressIn = {()=> console.log('Press In')}
+        onPressOut = {()=> console.log('Press Out')}
+        onPress = {()=> console.log('Press')}
+        onLongPress = {()=> console.log('Long Press')}
+        delayLongPress = {3000}
+        pressRetentionOffset = {{bottom :50, left :50, right :50, top : 50}}
+        hitSlop = {50}>
+            <Text style = {{padding :10, fontSize:30}}>{props.title}</Text>
+        </Pressable>
     );
 };
 
+const App = () => {
+    return (
+        <View style = {{
+            flex : 1,
+            justifyContent :'center',
+            backgroundColor :'#fff',
+            alignItems : 'center',
+        }}>
+            <Button title = "Pressable" />
+        </View>
+    );
+};
 
 export default App;
