@@ -27,22 +27,25 @@ export const Footer = () => {
 
 const styles = StyleSheet.create({
     container : {
+        
         width : '100%',
-        alignItems : 'center',
-        justifyContent :'center',
-        height : 80,
+        flexDirection: 'row-reverse',
+        alignItems : 'flex-start',
+        justifyContent :'flex-start',
+        height  : 100,
     },
     header : {
-        flex: 1,
+        flex : 2,
         backgroundColor:'#f1c40f',
     },
     contents : {
-        flex: 2,
+        flex :  2,
         backgroundColor :'#1abc9c',
         height : 640,
+        
     },
     footer : {
-        flex:1,
+        flex:2,
         backgroundColor:'#3498db',
     },
     text : {
